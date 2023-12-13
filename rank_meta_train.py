@@ -131,6 +131,11 @@ if __name__ == "__main__":
             model = get_model(optimized_ranks, args.num_classes)
         else:
             model = initial_model
+
+        if torch.cuda.is_available():  
+            model.cuda()
+            loss_fn.cuda()
+            
         optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
         lr_scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=5, verbose=True)
         for epoch in range(args.max_epochs):
@@ -140,6 +145,9 @@ if __name__ == "__main__":
                 else:
                     images = Variable(images)
                 labels = Variable(labels)
+                if torch.cuda.is_available():
+                    images = images.cuda()
+                    labels = labels.cuda()
 
                 optimizer.zero_grad()
                 outputs = model(images)
