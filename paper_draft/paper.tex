@@ -1,0 +1,69 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+
+% Definitions of handy macros can go here
+
+% Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
+
+%\jmlrheading{1}{2000}{1-48}{4/00}{10/00}{Marina Meil\u{a} and Michael I. Jordan}
+
+% Short headings should be running head and authors last names
+
+\ShortHeadings{Learning Dynamics of SGD with Weight Decay}{Steffanic}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Learning Dynamics of SGD with Weight Decay}
+
+\author{\name Patrick J. Steffanic \email psteffa1@vols.utk.edu \\
+       \addr Department of Physics\\
+       University of Tennessee, Knoxville\\
+       Knoxville, TN 37917, USA}
+
+\editor{}
+
+\maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+\cite{zhang2018three} 
+\end{abstract}
+
+\begin{keywords}
+    Stochastic Gradient Descent, Weight Decay, Learning Dynamics, Matrix Rank
+\end{keywords}
+
+\section{Introduction}
+
+% Acknowledgements should go at the end, before appendices and references
+
+\acks{}
+
+% Manual newpage inserted to improve layout of sample file - not
+% needed in general before appendices/bibliography.
+
+\newpage
+
+\appendix
+\section*{Appendix A.}
+\label{app:theorem}
+
+% Note: in this sample, the section number is hard-coded in. Following
+% proper LaTeX conventions, it should properly be coded as a reference:
+
+%In this appendix we prove the following theorem from
+%Section~\ref{sec:textree-generalization}:
+
+\vskip 0.2in
+\bibliography{paper}
+
+\end{document}
